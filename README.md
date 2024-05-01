@@ -120,4 +120,4 @@ O aplicativo Kwanza Bay permitirá que os usuários se tornem vendedores, podend
 
 
   
-@copyright 2024 by GunzaLab || CEO David Gunza
+@copyright 2024 by GunzaLab || David Gunza
