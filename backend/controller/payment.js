@@ -18,7 +18,7 @@ router.post(
       success: true,
       client_secret: myPayment.client_secret,
     });
-  })
+  }) 
 );
 
 router.get(

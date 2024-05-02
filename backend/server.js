@@ -19,7 +19,7 @@ connectDatabase();
 
 // create server
 const server = app.listen('8000', () => {
-  console.log(`Server is running on http://localhost:${process.env.PORT}`);
+  console.log(`Servidor rodando em http://localhost:${process.env.PORT}`);
 });
 
 // middlewares
@@ -37,7 +37,7 @@ app.use(
 app.use("/", express.static("uploads"));
 
 app.get("/test", (req, res) => {
-  res.send("Hello World!");
+  res.send("Olá Mundo!");
 });
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
@@ -53,7 +53,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Olá Mundo!");
 });
 
 // routes
@@ -86,13 +86,13 @@ app.use(ErrorHandler);
 // Handling Uncaught Exceptions
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
-  console.log(`shutting down the server for handling UNCAUGHT EXCEPTION! 💥`);
+  console.log(`desligando o servidor para lidar com EXCEÇÃO NÃO CAPTURADA! 💥`);
 });
 
 // unhandled promise rejection
 process.on("unhandledRejection", (err) => {
-  console.log(`Shutting down the server for ${err.message}`);
-  console.log(`shutting down the server for unhandle promise rejection`);
+  console.log(`Desligando o servidor para ${err.message}`);
+  console.log(`Desligando o servidor para resolver a rejeição da promessa`);
 
   server.close(() => {
     process.exit(1);

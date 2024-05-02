@@ -18,7 +18,7 @@ router.post(
       const shopId = req.body.shopId;
       const shop = await Shop.findById(shopId);
       if (!shop) {
-        return next(new ErrorHandler("Shop Id is invalid!", 400));
+        return next(new ErrorHandler("O Id da loja é inválido!", 400));
       } else {
         const files = req.files;
         const imageUrls = files.map((file) => `${file.filename}`);
@@ -94,12 +94,12 @@ router.delete(
       const event = await Event.findByIdAndDelete(productId);
 
       if (!event) {
-        return next(new ErrorHandler("Event not found with this id!", 500));
+        return next(new ErrorHandler("Evento não encontrado com este Id!", 500));
       }
 
       res.status(201).json({
         success: true,
-        message: "Event Deleted successfully!",
+        message: "Evento excluído com sucesso!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));
@@ -176,7 +176,7 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Reviwed succesfully!",
+        message: "Revisado com sucesso!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));

@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello world from socket server!");
+  res.send("Olá Mundo do servidor socket!");
 });
 
 let users = [];
@@ -109,5 +109,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(process.env.PORT || 4000, () => {
-  console.log(`server is running on port ${process.env.PORT || 4000}`);
+  console.log(`servidor rodando na porta ${process.env.PORT || 4000}`);
 });

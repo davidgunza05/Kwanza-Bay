@@ -7,11 +7,8 @@ const Withdraw = require("../model/withdraw");
 const sendMail = require("../utils/sendMail");
 const router = express.Router();
 
-// create withdraw request --- only for seller
-router.post(
-  "/create-withdraw-request",
-  isSeller,
-  catchAsyncErrors(async (req, res, next) => {
+// create Solicitação de retirada --- only for seller
+router.post("/create-withdraw-request",isSeller,catchAsyncErrors(async (req, res, next) => {
     try {
       const { amount } = req.body;
 
@@ -23,8 +20,8 @@ router.post(
       try {
         await sendMail({
           email: req.seller.email,
-          subject: "Withdraw Request",
-          message: `Hello ${req.seller.name}, Your withdraw request of ${amount}$ is processing. It will take 3days to 7days to processing! `,
+          subject: "Solicitação de retirada",
+          message: `Olá ${req.seller.name}, Seu pedido de retirada de ${amount}KZ está processando. O processamento levará de 2 a 5 dias! `,
         });
         res.status(201).json({
           success: true,
@@ -53,11 +50,7 @@ router.post(
 
 // get all withdraws --- admnin
 
-router.get(
-  "/get-all-withdraw-request",
-  isAuthenticated,
-  isAdmin("Admin"),
-  catchAsyncErrors(async (req, res, next) => {
+router.get("/get-all-withdraw-request",isAuthenticated, isAdmin("Admin"),catchAsyncErrors(async (req, res, next) => {
     try {
       const withdraws = await Withdraw.find().sort({ createdAt: -1 });
 
@@ -71,12 +64,8 @@ router.get(
   })
 );
 
-// update withdraw request ---- admin
-router.put(
-  "/update-withdraw-request/:id",
-  isAuthenticated,
-  isAdmin("Admin"),
-  catchAsyncErrors(async (req, res, next) => {
+// update Solicitação de retirada ---- admin
+router.put("/update-withdraw-request/:id", isAuthenticated, isAdmin("Admin"),catchAsyncErrors(async (req, res, next) => {
     try {
       const { sellerId } = req.body;
 
@@ -105,8 +94,8 @@ router.put(
       try {
         await sendMail({
           email: seller.email,
-          subject: "Payment confirmation",
-          message: `Hello ${seller.name}, Your withdraw request of ${withdraw.amount}$ is on the way. Delivery time depends on your bank's rules it usually takes 3days to 7days.`,
+          subject: "Confirmação de pagamento",
+          message: `Olá ${seller.name}, Sua Solicitação de retirada de ${withdraw.amount}KZ está no caminho. O prazo de entrega depende das regras do seu banco, geralmente leva de 2 a 5 dias.`,
         });
       } catch (error) {
         return next(new ErrorHandler(error.message, 500));

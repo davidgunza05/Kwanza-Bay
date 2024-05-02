@@ -6,9 +6,7 @@ const { isSeller, isAuthenticated } = require("../middleware/auth");
 const router = express.Router();
 
 // create a new conversation
-router.post(
-  "/create-new-conversation",
-  catchAsyncErrors(async (req, res, next) => {
+router.post("/create-new-conversation",catchAsyncErrors(async (req, res, next) => {
     try {
       const { groupTitle, userId, sellerId } = req.body;
 
@@ -38,8 +36,7 @@ router.post(
 );
 
 // get seller conversations
-router.get(
-  "/get-all-conversation-seller/:id",
+router.get("/get-all-conversation-seller/:id",
   isSeller,
   catchAsyncErrors(async (req, res, next) => {
     try {
@@ -60,8 +57,7 @@ router.get(
 );
 
 // get user conversations
-router.get(
-  "/get-all-conversation-user/:id",
+router.get("/get-all-conversation-user/:id",
   isAuthenticated,
   catchAsyncErrors(async (req, res, next) => {
     try {
@@ -82,9 +78,7 @@ router.get(
 );
 
 // update the last message
-router.put(
-  "/update-last-message/:id",
-  catchAsyncErrors(async (req, res, next) => {
+router.put("/update-last-message/:id",catchAsyncErrors(async (req, res, next) => {
     try {
       const { lastMessage, lastMessageId } = req.body;
 

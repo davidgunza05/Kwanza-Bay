@@ -1,20 +1,20 @@
 // navigation Data
 export const navItems = [
   {
-    title: "Home",
+    title: "Página Principal",
     url: "/",
   },
   {
-    title: "Best Selling",
+    title: "Mais vendido",
     url: "/best-selling",
   },
   {
-    title: "Products",
+    title: "Produtos",
     url: "/products",
   },
   {
-    title: "Events",
-    url: "/events",
+    title: "Eventos",
+    url: "/o",
   },
   {
     title: "FAQ",
@@ -26,8 +26,8 @@ export const navItems = [
 export const brandingData = [
   {
     id: 1,
-    title: "Free Shipping",
-    Description: "From all orders over 100$",
+    title: "Frete grátis",
+    Description: "De todos os pedidos acima de 10.000 KZ",
     icon: (
       <svg
         width="36"
@@ -76,8 +76,8 @@ export const brandingData = [
   },
   {
     id: 2,
-    title: "Daily Surprise Offers",
-    Description: "Save up to 25% off",
+    title: "Ofertas surpresa diárias",
+    Description: "Economize até 25% de desconto",
     icon: (
       <svg
         width="32"
@@ -104,8 +104,8 @@ export const brandingData = [
   },
   {
     id: 4,
-    title: "Affortable Prices",
-    Description: "Get Factory direct price",
+    title: "Preços acessíveis",
+    Description: "Obtenha preço direto da fábrica",
     icon: (
       <svg
         width="32"
@@ -151,8 +151,8 @@ export const brandingData = [
   },
   {
     id: 5,
-    title: "Secure Payments",
-    Description: "100% protected payments",
+    title: "Pagamentos Seguros",
+    Description: "Pagamentos 100% protegidos",
     icon: (
       <svg
         width="32"
@@ -191,35 +191,35 @@ export const brandingData = [
 export const categoriesData = [
   {
     id: 1,
-    title: "Computers and Laptops",
+    title: "Computadores e Laptops",
     subTitle: "",
     image_Url:
       "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
   },
   {
     id: 2,
-    title: "cosmetics and body care",
+    title: "cosméticos e cuidados com o corpo",
     subTitle: "",
     image_Url:
       "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
   },
   {
     id: 3,
-    title: "Accesories",
+    title: "Acessórios",
     subTitle: "",
     image_Url:
       "https://img.freepik.com/free-vector/ordering-goods-online-internet-store-online-shopping-niche-e-commerce-website-mother-buying-babies-clothes-footwear-toys-infant-accessories_335657-2345.jpg?w=2000",
   },
   {
     id: 4,
-    title: "Cloths",
+    title: "Materiais diversos e Ferramentas",
     subTitle: "",
     image_Url:
       "https://www.shift4shop.com/2015/images/industries/clothing/clothing-apparel.png",
   },
   {
     id: 5,
-    title: "Shoes",
+    title: "Sapatos & Ténis",
     subTitle: "",
     image_Url:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
@@ -233,27 +233,27 @@ export const categoriesData = [
   },
   {
     id: 7,
-    title: "Pet Care",
+    title: "Cuidado  de animais",
     subTitle: "",
     image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
   },
   {
     id: 8,
-    title: "Mobile and Tablets",
+    title: "Celulares e Tablets",
     subTitle: "",
     image_Url:
       "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mpwp3tua-apple-iphone-14-256gb-mavi-mpwp3tua-637986832343472449.jpg",
   },
   {
     id: 9,
-    title: "Music and Gaming",
+    title: "Música e Jogos",
     subTitle: "",
     image_Url:
       "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
   },
   {
     id: 10,
-    title: "Others",
+    title: "Outros",
     subTitle: "",
     image_Url:
       "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
@@ -264,11 +264,11 @@ export const categoriesData = [
 export const productData = [
   {
     id: 1,
-    category: "Computers and Laptops",
-    name: "MacBook pro M2 chipset 256gb ssd 8gb ram space-gray color with apple 1 year warranty",
+    category: "Computadores e Laptops",
+    name: "MacBook pro com chipset M2 256 gb ssd 8 gb ram cor cinza espacial com apple 1 ano de garantia.",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
-    image_Url: [
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
+      image_Url: [
       {
         public_id: "test",
         url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
@@ -294,10 +294,10 @@ export const productData = [
   },
   {
     id: 2,
-    category: "Mobile and Tablets",
-    name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
+    category: "Celulares e Tablets",
+    name: "Iphone 14 pro max 256 gb ssd e 8 gb de ram silver colour",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -320,14 +320,14 @@ export const productData = [
     rating: 5,
     total_sell: 80,
     stock: 10,
-    category: "Mobile & Tablets",
+    category: "Celulares e Tablets",
   },
   {
     id: 1,
-    category: "Computers and Laptop",
-    name: "MacBook pro M2 chipset 256gb ssd 8gb ram space gray color with apple 1 year warranty",
+    category: "Computadores e Laptops",
+    name: "MacBook pro com Chipset M2 256gb ssd 8gb ram cor cinza espaço com apple 1 ano de garantia",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -351,14 +351,14 @@ export const productData = [
     rating: 4,
     total_sell: 75,
     stock: 10,
-    category: "Computers & Laptop",
+    category: "Computadores e Laptops",
   },
   {
     id: 4,
-    category: "Others",
-    name: "New Fashionable Watch for men 2023 with multiple colors",
+    category: "Outros",
+    name: "Novo relógio elegante para homens 2023 com várias cores",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -370,13 +370,13 @@ export const productData = [
       },
     ],
     shop: {
-      name: "Shahriar Watch House",
+      name: "Casa de Vigilância Shahriar",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
-      category: "Others",
+      category: "Outros",
     },
     price: 100,
     discount_price: 79,
@@ -386,10 +386,10 @@ export const productData = [
   },
   {
     id: 5,
-    category: "Shoes",
-    name: "New Trend shoes for gents with all sizes",
+    category: "Sapatos e Ténis",
+    name: "Sapatos New Trend para homens em todos os tamanhos",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -401,7 +401,7 @@ export const productData = [
       },
     ],
     shop: {
-      name: "Alisha Shoes Mart",
+      name: "Calçados Alisha Mart",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
@@ -413,13 +413,13 @@ export const productData = [
     rating: 5,
     total_sell: 49,
     stock: 10,
-    category: "Shoes",
+    category: "Sapatos e Ténis",
   },
   {
     id: 1,
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
+    name: "Fone de ouvido para jogos Asus com várias cores e entrega gratuita",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -446,19 +446,19 @@ export const productData = [
         user: {
           // user object will be here
         },
-        comment: "IT's so cool!",
+        comment: "É tão legal!",
         rating: 5,
       },
     ],
     total_sell: 20,
     stock: 10,
-    category: "Music and Gaming",
+    category: "Música e Jogos",
   },
   {
     id: 4,
     name: "New Fashionable Watch for men 2023 with multiple colors",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -470,7 +470,7 @@ export const productData = [
       },
     ],
     shop: {
-      name: "Shahriar Watch House",
+      name: "Relógio de casa Shahriar",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
@@ -485,9 +485,9 @@ export const productData = [
   },
   {
     id: 1,
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
+    name: "Fone de ouvido para jogos Asus com várias cores e entrega gratuita",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -514,7 +514,7 @@ export const productData = [
         user: {
           // user object will be here
         },
-        comment: "IT's so cool!",
+        comment: "É tão legal!",
         rating: 5,
       },
     ],
@@ -523,10 +523,10 @@ export const productData = [
   },
   {
     id: 2,
-    category: "Mobile and Tablets",
-    name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
+    category: "Celulares e Tablets",
+    name: "Iphone 14 pro max 256 gb ssd e 8 gb de ram cor prata",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -552,10 +552,10 @@ export const productData = [
   },
   {
     id: 1,
-    category: "Music and Gaming",
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
+    category: "Música e Jogos",
+    name: "Fone de ouvido para jogos Asus com várias cores e entrega gratuita",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Os detalhes do produto são uma parte crucial de qualquer site de comércio eletrônico ou mercado online. Esses detalhes ajudam os clientes em potencial a tomar uma decisão informada sobre o produto que estão interessados ​​em comprar. Uma descrição do produto bem escrita também pode ser uma ferramenta de marketing poderosa que pode ajudar a aumentar as vendas. Os detalhes do produto geralmente incluem informações sobre as características do produto, especificações, dimensões, peso, materiais e outras informações relevantes que podem ajudar os clientes a compreender o produto. melhorar. A seção de detalhes do produto também deve incluir imagens e vídeos de alta qualidade do produto, bem como avaliações e classificações de clientes.",
     image_Url: [
       {
         public_id: "test",
@@ -582,7 +582,7 @@ export const productData = [
         user: {
           // user object will be here
         },
-        comment: "IT's so cool!",
+        comment: "É tão legal!",
         rating: 5,
       },
     ],
@@ -593,39 +593,39 @@ export const productData = [
 
 export const footerProductLinks = [
   {
-    name: "About us",
+    name: "Sobre nós",
     link: "/about",
   },
   {
-    name: "Careers",
+    name: "Carreiras",
     link: "/carrers",
   },
   {
-    name: "Store Locations",
+    name: "Locais de Loja",
   },
   {
-    name: "Our Blog",
+    name: "Nosso Blog",
   },
   {
-    name: "Reviews",
+    name: "Comentários",
   },
 ];
 
 export const footercompanyLinks = [
   {
-    name: "Game & Video",
+    name: "Jogo e Vídeo",
   },
   {
-    name: "Phone &Tablets",
+    name: "Fone e Tabletes",
   },
   {
-    name: "Computers & Laptop",
+    name: "Computadores e Laptops",
   },
   {
-    name: "Sport Watches",
+    name: "Relógios Esportivo",
   },
   {
-    name: "Events",
+    name: "Eventos",
   },
 ];
 
@@ -634,15 +634,15 @@ export const footerSupportLinks = [
     name: "FAQ",
   },
   {
-    name: "Reviews",
+    name: "Comentários",
   },
   {
-    name: "Contact Us",
+    name: "Fale Conosco",
   },
   {
-    name: "Shipping",
+    name: "Envio",
   },
   {
-    name: "Live chat",
+    name: "Chat ao vivo",
   },
 ];

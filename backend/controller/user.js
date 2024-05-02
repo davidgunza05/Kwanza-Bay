@@ -18,17 +18,17 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     const userEmail = await User.findOne({ email });
 
     if (userEmail) {
-      // if user already exits account is not create and file is deleted
+      // se o usuário já existe, a conta não será criada e o arquivo será excluído
       const filename = req.file.filename;
       const filePath = `uploads/${filename}`;
       fs.unlink(filePath, (err) => {
         if (err) {
           console.log(err);
-          res.status(500).json({ message: "Error deleting file" });
+          res.status(500).json({ message: "Erro ao excluir arquivo" });
         }
       });
 
-      return next(new ErrorHandler("User already exits", 400));
+      return next(new ErrorHandler("Usuário já existe", 400));
     }
 
     const filename = req.file.filename;
@@ -49,12 +49,12 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     try {
       await sendMail({
         email: user.email,
-        subject: "Activate your account",
-        message: `Hello  ${user.name}, please click on the link to activate your account ${activationUrl} `,
+        subject: "Ative sua conta",
+        message: `Olá  ${user.name}, por favor clique no link para ativar sua conta ${activationUrl} `,
       });
       res.status(201).json({
         success: true,
-        message: `please check your email:- ${user.email} to activate your account!`,
+        message: `Por favor verifique seu email:- ${user.email} para ativar a sua conta!`,
       });
     } catch (err) {
       return next(new ErrorHandler(err.message, 500));
@@ -66,17 +66,15 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
 
 // create activation token
 const createActivationToken = (user) => {
-  // why use create activatetoken?
-  // to create a token for the user to activate their account  after they register
+  // por que usar criar activatetoken?
+  //para criar um token para o usuário ativar sua conta após se registrar
   return jwt.sign(user, process.env.ACTIVATION_SECRET, {
     expiresIn: "5m",
   });
 };
 
-// activate user account
-router.post(
-  "/activation",
-  catchAsyncErrors(async (req, res, next) => {
+//ativa a conta do usuário
+router.post("/activation",catchAsyncErrors(async (req, res, next) => {
     try {
       const { activation_token } = req.body;
 
@@ -85,14 +83,14 @@ router.post(
         process.env.ACTIVATION_SECRET
       );
       if (!newUser) {
-        return next(new ErrorHandler("Invalid token", 400));
+        return next(new ErrorHandler("Token inválido", 400));
       }
       const { name, email, password, avatar } = newUser;
 
       let user = await User.findOne({ email });
 
       if (user) {
-        return next(new ErrorHandler("User already exists", 400));
+        return next(new ErrorHandler("Usuário já existe", 400));
       }
       user = await User.create({
         name,
@@ -108,20 +106,18 @@ router.post(
 );
 
 // login user
-router.post(
-  "/login-user",
-  catchAsyncErrors(async (req, res, next) => {
+router.post("/login-user",catchAsyncErrors(async (req, res, next) => {
     try {
       const { email, password } = req.body;
 
       if (!email || !password) {
-        return next(new ErrorHandler("Please provide the all filelds", 400));
+        return next(new ErrorHandler("Preencha todos os campos", 400));
       }
       const user = await User.findOne({ email }).select("+password");
       // +password is used to select the password field from the database
 
       if (!user) {
-        return next(new ErrorHandler("user doesn't exits", 400));
+        return next(new ErrorHandler("Usuário não existe", 400));
       }
 
       // compore password with database password
@@ -129,7 +125,7 @@ router.post(
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct inforamtions", 400)
+          new ErrorHandler("Forneça as informações corretas", 400)
         );
       }
       sendToken(user, 201, res);
@@ -148,7 +144,7 @@ router.get(
       const user = await User.findById(req.user.id);
 
       if (!user) {
-        return next(new ErrorHandler("User doesn't exists", 400));
+        return next(new ErrorHandler("Usuário não existe", 400));
       }
       res.status(200).json({
         success: true,
@@ -171,7 +167,7 @@ router.get(
       });
       res.status(201).json({
         success: true,
-        message: "Log out successful!",
+        message: "Sessão terminada com sucesso",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -187,22 +183,22 @@ router.put(
     try {
       const { email, password, phoneNumber, name } = req.body;
 
-      /* The line `const user = await User.findOne({ email }).select("+password");` is querying the database
-to find a user with the specified email address. The `select("+password")` part is used to include
-the password field in the returned user object. By default, the password field is not selected when
-querying the database for security reasons. However, in this case, the password field is needed to
-compare the provided password with the stored password for authentication purposes. */
+      /* A linha `const user = await User.findOne({ email }).select("+password");` está consultando o banco de dados
+para encontrar um usuário com o endereço de e-mail especificado. A parte `select("+password")` é usada para incluir
+o campo de senha no objeto de usuário retornado. Por padrão, o campo de senha não está selecionado quando
+consultando o banco de dados por motivos de segurança. Porém, neste caso, o campo de senha é necessário para
+compare a senha fornecida com a senha armazenada para fins de autenticação. */
       const user = await User.findOne({ email }).select("+password");
 
       if (!user) {
-        return next(new ErrorHandler("User not found", 400));
+        return next(new ErrorHandler("Usuário não encontrado", 400));
       }
 
       const isPasswordValid = await user.comparePassword(password);
 
       if (!isPasswordValid) {
         return next(
-          new ErrorHandler("Please provide the correct information", 400)
+          new ErrorHandler("Forneça as informações corretas", 400)
         );
       }
 
@@ -237,10 +233,10 @@ router.put(
 
       const fileUrl = path.join(req.file.filename); // new image
 
-      /* The code `const user = await User.findByIdAndUpdate(req.user.id, { avatar: fileUrl });` is
-        updating the avatar field of the user with the specified `req.user.id`. It uses the
-        `User.findByIdAndUpdate()` method to find the user by their id and update the avatar field
-        with the new `fileUrl` value. The updated user object is then stored in the `user` variable. */
+      /*O código `const user = await User.findByIdAndUpdate(req.user.id, {avatar: fileUrl });` é
+        atualizando o campo avatar do usuário com o `req.user.id` especificado. Ele usa o
+        Método `User.findByIdAndUpdate()` para encontrar o usuário por seu ID e atualizar o campo de avatar
+        com o novo valor `fileUrl`. O objeto de usuário atualizado é então armazenado na variável `user`.*/
       const user = await User.findByIdAndUpdate(req.user.id, {
         avatar: fileUrl,
       });
@@ -268,7 +264,7 @@ router.put(
       );
       if (sameTypeAddress) {
         return next(
-          new ErrorHandler(`${req.body.addressType} address already exists`)
+          new ErrorHandler(`${req.body.addressType} endereço já existe`)
         );
       }
 
@@ -335,7 +331,7 @@ router.put(
       );
 
       if (!isPasswordMatched) {
-        return next(new ErrorHandler("Old password is incorrect!", 400));
+        return next(new ErrorHandler("Senha antiga incorreta!", 400));
       }
 
       /* The line `if (req.body.newPassword !== req.body.confirmPassword)` is checking if the value of
@@ -345,7 +341,7 @@ router.put(
     different passwords and an error is returned. */
       if (req.body.newPassword !== req.body.confirmPassword) {
         return next(
-          new ErrorHandler("Password doesn't matched with each other!", 400)
+          new ErrorHandler("A senha não corresponde entre si!", 400)
         );
       }
       user.password = req.body.newPassword;
@@ -354,7 +350,7 @@ router.put(
 
       res.status(200).json({
         success: true,
-        message: "Password updated successfully!",
+        message: "Senha atualizada com sucesso!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -410,7 +406,7 @@ router.delete(
 
       if (!user) {
         return next(
-          new ErrorHandler("User is not available with this id", 400)
+          new ErrorHandler("O usuário não está disponível com este Id", 400)
         );
       }
 
@@ -418,7 +414,7 @@ router.delete(
 
       res.status(201).json({
         success: true,
-        message: "User deleted successfully!",
+        message: "Usuário excluído com sucesso!",
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));

@@ -17,7 +17,7 @@ router.post(
       });
 
       if (isCoupounCodeExists.length !== 0) {
-        return next(new ErrorHandler("Coupoun code already exists!", 400));
+        return next(new ErrorHandler("O código do cupom já existe!", 400));
       }
 
       const coupounCode = await CoupounCode.create(req.body);
@@ -58,11 +58,11 @@ router.delete(
       const couponCode = await CoupounCode.findByIdAndDelete(req.params.id);
 
       if (!couponCode) {
-        return next(new ErrorHandler("Coupon code dosen't exists!", 400));
+        return next(new ErrorHandler("Código de cupom não existe!", 400));
       }
       res.status(201).json({
         success: true,
-        message: "Coupon code deleted successfully!",
+        message: "Código de cupom excluído com sucesso!",
       });
     } catch (error) {
       return next(new ErrorHandler(error, 400));

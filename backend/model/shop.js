@@ -5,16 +5,16 @@ const jwt = require("jsonwebtoken");
 const shopSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please enter your shop name!"],
+    required: [true, "Insira o seu nome!"],
   },
   email: {
     type: String,
-    required: [true, "Please enter your shop email address"],
+    required: [true, "Insira o seu email!"],
   },
   password: {
     type: String,
-    required: [true, "Please enter your password"],
-    minLength: [6, "Password should be greater than 6 characters"],
+    required: [true, "Insira a tua senha"],
+    minLength: [6, "A senha deve ter mais de 4 caracteres"],
     select: false,
   },
   description: {
