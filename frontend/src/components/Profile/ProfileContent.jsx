@@ -66,7 +66,7 @@ const ProfileContent = ({ active }) => {
             })
             .then((response) => {
                 dispatch(loadUser());
-                toast.success("avatar updated successfully!");
+                toast.success("avatar atualizado com sucesso!");
             })
             .catch((error) => {
                 toast.error(error);
@@ -106,7 +106,7 @@ const ProfileContent = ({ active }) => {
                                 <div className='w-full 800px:flex block pb-3'>
 
                                     <div className=' w-[100%] 800px:w-[50%]'>
-                                        <label className='block pb-2'>Full Name</label>
+                                        <label className='block pb-2'>Nome Completo</label>
                                         <input type="text"
                                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
                                             required
@@ -116,7 +116,7 @@ const ProfileContent = ({ active }) => {
                                     </div>
 
                                     <div className=' w-[100%] 800px:w-[50%]'>
-                                        <label className='block pb-2'>Email Address</label>
+                                        <label className='block pb-2'>Endereço de e-mail</label>
                                         <input type="text"
                                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
                                             required
@@ -128,7 +128,7 @@ const ProfileContent = ({ active }) => {
 
                                 <div className="w-full 800px:flex block pb-3">
                                     <div className=" w-[100%] 800px:w-[50%]">
-                                        <label className="block pb-2">Phone Number</label>
+                                        <label className="block pb-2">Número de Telefone</label>
                                         <input
                                             type="number"
                                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -139,7 +139,7 @@ const ProfileContent = ({ active }) => {
                                     </div>
 
                                     <div className=" w-[100%] 800px:w-[50%]">
-                                        <label className="block pb-2">Enter your password</label>
+                                        <label className="block pb-2">Coloque sua senha</label>
                                         <input
                                             type="password"
                                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -220,11 +220,11 @@ const AllOrders = () => {
 
 
     const columns = [
-        { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+        { field: "id", headerName: "ID pedido", minWidth: 150, flex: 0.7 },
 
         {
             field: "status",
-            headerName: "Status",
+            headerName: "Estado",
             minWidth: 130,
             flex: 0.7,
             cellClassName: (params) => {
@@ -235,7 +235,7 @@ const AllOrders = () => {
         },
         {
             field: "itemsQty",
-            headerName: "Items Qty",
+            headerName: "Quantidade de itens",
             type: "number",
             minWidth: 130,
             flex: 0.7,
@@ -277,7 +277,7 @@ const AllOrders = () => {
             row.push({
                 id: item._id,
                 itemsQty: item.cart.length,
-                total: "US$ " + item.totalPrice,
+                total: item.totalPrice + " KZ" ,
                 status: item.status,
             });
         });
@@ -314,11 +314,11 @@ const AllRefundOrders = () => {
     const eligibleOrders = orders && orders.filter((item) => item.status === "Processing refund");
 
     const columns = [
-        { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+        { field: "id", headerName: "ID pedido", minWidth: 150, flex: 0.7 },
 
         {
             field: "status",
-            headerName: "Status",
+            headerName: "Estado",
             minWidth: 130,
             flex: 0.7,
             cellClassName: (params) => {
@@ -329,7 +329,7 @@ const AllRefundOrders = () => {
         },
         {
             field: "itemsQty",
-            headerName: "Items Qty",
+            headerName: "Quantidade de itens",
             type: "number",
             minWidth: 130,
             flex: 0.7,
@@ -371,7 +371,7 @@ const AllRefundOrders = () => {
             row.push({
                 id: item._id,
                 itemsQty: item.cart.length,
-                total: "US$ " + item.totalPrice,
+                total: item.totalPrice + " KZ",
                 status: item.status,
             });
         });
@@ -404,11 +404,11 @@ const TrackOrder = () => {
 
 
     const columns = [
-        { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+        { field: "id", headerName: "ID pedido", minWidth: 150, flex: 0.7 },
 
         {
             field: "status",
-            headerName: "Status",
+            headerName: "Estado",
             minWidth: 150,
             flex: 0.7,
             cellClassName: (params) => {
@@ -419,7 +419,7 @@ const TrackOrder = () => {
         },
         {
             field: "itemsQty",
-            headerName: "Items Qty",
+            headerName: "Quantidade de itens",
             type: "number",
             minWidth: 130,
             flex: 0.7,
@@ -461,7 +461,7 @@ const TrackOrder = () => {
             row.push({
                 id: item._id,
                 itemsQty: item.cart.length,
-                total: "US$ " + item.totalPrice,
+                total: item.totalPrice + " KZ",
                 status: item.status,
             });
         });
@@ -513,7 +513,7 @@ const ChangePassword = () => {
             <h1
                 className='text-[25px] text-center font-[600] text[#000000ba] pb-2'
             >
-                Change Password
+                Alterar Senha
             </h1>
             <div className='w-full'>
                 <form
@@ -522,7 +522,7 @@ const ChangePassword = () => {
                     className="flex flex-col items-center"
                 >
                     <div className=" w-[100%] 800px:w-[50%] mt-5">
-                        <label className='block pb-2'>Enter your Old password</label>
+                        <label className='block pb-2'>Digite sua senha antiga</label>
                         <input type="password"
                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
                             required
@@ -532,7 +532,7 @@ const ChangePassword = () => {
                     </div>
 
                     <div className=" w-[100%] 800px:w-[50%] mt-2">
-                        <label className='block pb-2'>Enter your new Password</label>
+                        <label className='block pb-2'>Digite sua nova senha</label>
                         <input type="password"
                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
                             required
@@ -542,7 +542,7 @@ const ChangePassword = () => {
                     </div>
 
                     <div className=" w-[100%] 800px:w-[50%] mt-2">
-                        <label className="block pb-2">Enter your confirm password</label>
+                        <label className="block pb-2">Digite sua senha de confirmação</label>
                         <input
                             type="password"
                             className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -599,7 +599,7 @@ const Address = () => {
         e.preventDefault();
 
         if (addressType === "" || country === "" || city === "") {
-            toast.error("Please fill all the fields!");
+            toast.error("Por favor preencha todos os campos!");
         } else {
             // hear use redex
             dispatch(
@@ -642,13 +642,13 @@ const Address = () => {
                                 />
                             </div>
                             <h1 className="text-center text-[25px] font-Poppins">
-                                Add New Address
+                            Adicionar novo endereço
                             </h1>
                             <div className='w-full'>
                                 <form aria-required onSubmit={handleSubmit} className="w-full">
                                     <div className="w-full block p-4">
                                         <div className="w-full pb-2">
-                                            <label className="block pb-2">Country</label>
+                                            <label className="block pb-2">País</label>
                                             <select
                                                 name=""
                                                 id=""
@@ -659,7 +659,7 @@ const Address = () => {
                                                 <option value=""
                                                     className='bloc border pb-2'
                                                 >
-                                                    Choose your contry
+                                                    Escolha seu país
                                                 </option>
                                                 {
                                                     Country &&
@@ -677,7 +677,7 @@ const Address = () => {
 
                                         {/* City */}
                                         <div className="w-full pb-2">
-                                            <label className="block pb-2">Choose your City</label>
+                                            <label className="block pb-2">Escolha sua cidade</label>
                                             <select
                                                 name=""
                                                 id=""
@@ -686,7 +686,7 @@ const Address = () => {
                                                 className="w-[95%] border h-[40px] rounded-[5px]"
                                             >
                                                 <option value="" className="block border pb-2">
-                                                    choose your city
+                                                    Escolha sua cidade
                                                 </option>
                                                 {State &&
                                                     State.getStatesOfCountry(country).map((item) => (
@@ -703,7 +703,7 @@ const Address = () => {
 
                                         {/* Address 1 */}
                                         <div className="w-full pb-2">
-                                            <label className="block pb-2">Address 1</label>
+                                            <label className="block pb-2">Endereço 1</label>
                                             <input
                                                 type="address"
                                                 className={`${styles.input}`}
@@ -714,7 +714,7 @@ const Address = () => {
                                         </div>
                                         {/* Address 2 */}
                                         <div className="w-full pb-2">
-                                            <label className="block pb-2">Address 2</label>
+                                            <label className="block pb-2">Endereço 2</label>
                                             <input
                                                 type="address"
                                                 className={`${styles.input}`}
@@ -725,7 +725,7 @@ const Address = () => {
                                         </div>
 
                                         <div className="w-full pb-2">
-                                            <label className="block pb-2">Zip Code</label>
+                                            <label className="block pb-2">Código postal</label>
                                             <input
                                                 type="number"
                                                 className={`${styles.input}`}
@@ -736,7 +736,7 @@ const Address = () => {
                                         </div>
 
                                         <div>
-                                            <label className='block pb-2'>Address Type</label>
+                                            <label className='block pb-2'>Tipo de endereço</label>
                                             <select name="" id=""
                                                 value={addressType}
                                                 onChange={(e) => setAddressType(e.target.value)}
@@ -745,7 +745,7 @@ const Address = () => {
                                                 <option value=""
                                                     className='block border pb-2'
                                                 >
-                                                    Choose Yoour Address Type
+                                                    Escolha o seu tipo de endereço
                                                 </option>
                                                 {
                                                     addressTypeData &&
@@ -785,12 +785,12 @@ const Address = () => {
                 <h1
                     className='text-[25px] font-[600] text[#000000ba] pb-2'
                 >
-                    My Address
+                    Meu endereço
                 </h1>
                 <div className={`${styles.button} rounded-md`}
                     onClick={() => setOpen(true)}
                 >
-                    <span className='text-[#fff]'>Add New</span>
+                    <span className='text-[#fff]'>Adicionar novo</span>
 
                 </div>
             </div>
@@ -828,7 +828,7 @@ const Address = () => {
             {
                 user && user.addresses.length === 0 && (
                     <h5 className="text-center pt-8 text-[18px]">
-                        You not have any saved address!
+                        Você não tem nenhum endereço salvo!
                     </h5>
                 )}
         </div>

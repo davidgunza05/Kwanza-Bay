@@ -52,7 +52,7 @@ const OrderDetails = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        toast.success("Order updated!");
+        toast.success("Pedido atualizado!");
         dispatch(getAllOrdersOfShop(seller._id));
       })
       .catch((error) => {
@@ -65,23 +65,23 @@ const OrderDetails = () => {
       <div className="w=full flex items-center justify-between">
         <div className="flex items-center">
           <BsFillBagFill size={30} color="crimson" />
-          <h1 className="pl-2 text-[25px]">Order Details</h1>
+          <h1 className="pl-2 text-[25px]">Detalhes do pedido</h1>
         </div>
         <Link to="/dashboard-orders">
           <div
             className={`${styles.button} !bg-[#fce1e6] !rounded-[4px] text-[#e94560] font-[600] !h-[45px] text-[18px]`}
           >
-            Order List
+            Lista de pedidos
           </div>
         </Link>
       </div>
 
       <div className="w-full flex items-center justify-between pt-6">
         <h5 className="text-[#00000084]">
-          order ID: <span>#{data?._id?.slice(0, 8)}</span>
+          ID pedido: <span>#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#000000084]">
-          Placed On: <span>{data?.createdAt?.slice(0, 10)}</span>
+        Concluído em: <span>{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 
@@ -99,14 +99,14 @@ const OrderDetails = () => {
             <div className="w-full">
               <h5 className="pl-3 text-[20px]">{item.name}</h5>
               <h5 className="pl-3 text-[20px] text-[#00000091]">
-                US${item.discountPrice} x {item.qty}
+                {item.discountPrice}KZ x {item.qty}
               </h5>
             </div>
           </div>
         ))}
       <div className="border-t w-full text-right">
         <h5>
-          Total Price: <strong>US${data?.totalPrice}</strong>
+          Preço total: <strong>{data?.totalPrice}KZ</strong>
         </h5>
       </div>
       <br />
@@ -116,7 +116,7 @@ const OrderDetails = () => {
 
       <div className="w-full 800px:flex items-center">
         <div className="w-full 800px:w-[60%]">
-          <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
+          <h4 className="pt-3 text-[20px] font-[600]">Endereço de envio:</h4>
 
           <h4 className="pt-3 text-[20px]">
             {data?.shippingAddress.address1 +
@@ -130,7 +130,7 @@ const OrderDetails = () => {
         </div>
 
         <div className="w-full 800px:w-[40%]">
-          <h4 className="pt-3 text-[20px]">Payment Info:</h4>
+          <h4 className="pt-3 text-[20px]">Informações de pagamento:</h4>
           <h4>
             Status:{" "}
             {/* /* The expression `{data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not
@@ -143,7 +143,7 @@ const OrderDetails = () => {
       <br />
       <br />
 
-      <h4 className="pt-3 text-[20px] font-[600]">Order status:</h4>
+      <h4 className="pt-3 text-[20px] font-[600]">Estado de pedido:</h4>
       {data?.status !== "Processing refund" &&
         data?.status !== "Refund Success" && (
           <select
@@ -204,7 +204,7 @@ const OrderDetails = () => {
             : refundOrderUpdateHandler
         }
       >
-        Update Status
+        Atualizar estado
       </div>
     </div>
   );

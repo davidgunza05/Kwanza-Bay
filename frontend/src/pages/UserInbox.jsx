@@ -208,7 +208,7 @@ const UserInbox = () => {
         <>
           <Header />
           <h1 className="text-center text-[30px] py-3 font-Poppins">
-            All Messages
+            Todas as mensagens
           </h1>
           {/* All messages list */}
           {conversations &&
@@ -310,7 +310,7 @@ const MessageList = ({
         <h1 className="text-[18px]">{userData?.name}</h1>
         <p className="text-[16px] text-[#000c]">
           {data?.lastMessageId !== userData?._id
-            ? "You:"
+            ? "Você:"
             : userData?.name.split(" ")[0] + ": "}{" "}
           {data?.lastMessage}
         </p>

@@ -14,7 +14,7 @@ import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-
+ 
 const ProfileSidebar = ({ active, setActive }) => {
   const navigate = useNavigate();
 

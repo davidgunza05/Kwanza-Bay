@@ -53,7 +53,7 @@ const ShopSettings = () => {
             phoneNumber,
             description,
         }, { withCredentials: true }).then((res) => {
-            toast.success("Shop info updated succesfully!");
+            toast.success("Informações da loja atualizada com sucesso");
             dispatch(loadSeller());
         }).catch((error) => {
             toast.error(error.response.data.message);
@@ -96,7 +96,7 @@ const ShopSettings = () => {
                 >
                     <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
                         <div className="w-full pl-[3%]">
-                            <label className="block pb-2">Shop Name</label>
+                            <label className="block pb-2">Nome da loja</label>
                         </div>
                         <input
                             type="name"
@@ -109,13 +109,13 @@ const ShopSettings = () => {
                     </div>
                     <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
                         <div className="w-full pl-[3%]">
-                            <label className="block pb-2">Shop description</label>
+                            <label className="block pb-2">Descrição da loja</label>
                         </div>
                         <input
                             type="name"
                             placeholder={`${seller?.description
                                 ? seller.description
-                                : "Enter your shop description"
+                                : "Insira a descrição da sua loja"
                                 }`}
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
@@ -124,7 +124,7 @@ const ShopSettings = () => {
                     </div>
                     <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
                         <div className="w-full pl-[3%]">
-                            <label className="block pb-2">Shop Address</label>
+                            <label className="block pb-2">Endereço da loja</label>
                         </div>
                         <input
                             type="name"
@@ -138,7 +138,7 @@ const ShopSettings = () => {
 
                     <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
                         <div className="w-full pl-[3%]">
-                            <label className="block pb-2">Shop Phone Number</label>
+                            <label className="block pb-2">Número de telefone da loja</label>
                         </div>
                         <input
                             type="number"
@@ -152,7 +152,7 @@ const ShopSettings = () => {
 
                     <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
                         <div className="w-full pl-[3%]">
-                            <label className="block pb-2">Shop Zip Code</label>
+                            <label className="block pb-2">Código postal da loja</label>
                         </div>
                         <input
                             type="number"

@@ -23,7 +23,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 1 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Dashboard
+                        Painel
                     </h5>
                 </Link>
             </div>
@@ -38,7 +38,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 2 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        All Orders
+                        Todos Pedidos
                     </h5>
                 </Link>
             </div>
@@ -50,7 +50,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 3 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        All Products
+                        Todos Produtos
                     </h5>
                 </Link>
             </div>
@@ -68,7 +68,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 4 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Create Product
+                        Criar Produto
                     </h5>
                 </Link>
             </div>
@@ -83,7 +83,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 5 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        All Events
+                        Todos Eventos
                     </h5>
                 </Link>
             </div>
@@ -98,7 +98,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 6 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Create Event
+                        Criar Evento
                     </h5>
                 </Link>
             </div>
@@ -116,7 +116,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 7 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Withdraw Money
+                        Retirar dinheiro
                     </h5>
                 </Link>
             </div>
@@ -131,7 +131,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 8 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Shop Inbox
+                       Caixa de mensagem da loja
                     </h5>
                 </Link>
             </div>
@@ -146,7 +146,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 9 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Discount Codes
+                       Códigos de desconto
                     </h5>
                 </Link>
             </div>
@@ -161,7 +161,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 10 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Refunds
+                        Reembolsos
                     </h5>
                 </Link>
             </div>
@@ -176,7 +176,7 @@ const DashboardSideBar = ({ active }) => {
                         className={`hidden 800px:block pl-2 text-[18px] font-[400] ${active === 11 ? "text-[crimson]" : "text-[#555]"
                             }`}
                     >
-                        Settings
+                        Configurações
                     </h5>
                 </Link>
             </div>

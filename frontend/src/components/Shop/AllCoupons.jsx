@@ -41,7 +41,7 @@ const AllCoupons = () => {
 
     const handleDelete = async (id) => {
         axios.delete(`${server}/coupon/delete-coupon/${id}`, { withCredentials: true }).then((res) => {
-            toast.success("Coupon code deleted succesfully!")
+            toast.success("Código do cupom excluído com sucesso!")
         })
         window.location.reload();
     };
@@ -63,7 +63,7 @@ const AllCoupons = () => {
                 { withCredentials: true }
             )
             .then((res) => {
-                toast.success("Coupon code created successfully!");
+                toast.success("Código de cupom criado com sucesso!");
                 setOpen(false);
                 window.location.reload();
             })
@@ -76,13 +76,13 @@ const AllCoupons = () => {
         { field: "id", headerName: "Id", minWidth: 150, flex: 0.7 },
         {
             field: "name",
-            headerName: "Coupon Code",
+            headerName: "Código do cupom",
             minWidth: 180,
             flex: 1.4,
         },
         {
             field: "price",
-            headerName: "Value",
+            headerName: "Valor",
             minWidth: 100,
             flex: 0.6,
         },
@@ -128,7 +128,7 @@ const AllCoupons = () => {
                             className={`${styles.button} !w-max !h-[45px] px-3 !rounded-[5px] mr-3 mb-3`}
                             onClick={() => setOpen(true)}
                         >
-                            <span className="text-white">Create Coupon Code</span>
+                            <span className="text-white">Criar código de cupom</span>
                         </div>
                     </div>
                     <DataGrid
@@ -149,14 +149,14 @@ const AllCoupons = () => {
                                     />
                                 </div>
                                 <h5 className="text-[30px] font-Poppins text-center">
-                                    Create Coupon code
+                                    Criar código de cupom
                                 </h5>
                                 {/* create coupoun code */}
                                 <form onSubmit={handleSubmit} aria-required={true}>
 
                                     <div>
                                         <label className="pb-2">
-                                            Name <span className="text-red-500">*</span>
+                                            Nome <span className="text-red-500">*</span>
                                         </label>
                                         <input
                                             type="text"
@@ -165,13 +165,13 @@ const AllCoupons = () => {
                                             value={name}
                                             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                             onChange={(e) => setName(e.target.value)}
-                                            placeholder="Enter your coupon code name..."
+                                            placeholder="Digite o nome do código do seu cupom..."
                                         />
                                     </div>
 
                                     <div>
                                         <label className="pb-2">
-                                            Discount Percentenge{" "}
+                                        Porcentagem de desconto{" "}
                                             <span className="text-red-500">*</span>
                                         </label>
                                         <input
@@ -181,43 +181,43 @@ const AllCoupons = () => {
                                             required
                                             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                             onChange={(e) => setValue(e.target.value)}
-                                            placeholder="Enter your coupon code value..."
+                                            placeholder="Insira o valor do seu código de cupom..."
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="pb-2">Min Amount</label>
+                                        <label className="pb-2">Valor mínimo</label>
                                         <input
                                             type="number"
                                             name="value"
                                             value={minAmount}
                                             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                             onChange={(e) => setMinAmout(e.target.value)}
-                                            placeholder="Enter your coupon code min amount..."
+                                            placeholder="Insira o valor mínimo do código do cupom..."
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="pb-2">Max Amount</label>
+                                        <label className="pb-2">Valor máximo</label>
                                         <input
                                             type="number"
                                             name="value"
                                             value={maxAmount}
                                             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                             onChange={(e) => setMaxAmount(e.target.value)}
-                                            placeholder="Enter your coupon code max amount..."
+                                            placeholder="Insira o valor máximo do seu código de cupom..."
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="pb-2">Selected Product</label>
+                                        <label className="pb-2">Produto selecionado</label>
                                         <select
                                             className="w-full mt-2 border h-[35px] rounded-[5px]"
                                             value={selectedProducts}
                                             onChange={(e) => setSelectedProducts(e.target.value)}
                                         >
-                                            <option value="Choose your selected products">
-                                                Choose a selected product
+                                            <option value="Escolha os produtos selecionados">
+                                            Escolha um produto selecionado
                                             </option>
                                             {products &&
                                                 products.map((i) => (

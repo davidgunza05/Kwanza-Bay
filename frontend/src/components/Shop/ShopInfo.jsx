@@ -70,37 +70,37 @@ const ShopInfo = ({ isOwner }) => {
                             </p>
                         </div>
                         <div className="p-3">
-                            <h5 className="font-[600]">Address</h5>
+                            <h5 className="font-[600]">Endereço</h5>
                             <h4 className="text-[#000000a6]">{data.address}</h4>
                         </div>
                         <div className="p-3">
-                            <h5 className="font-[600]">Phone Number</h5>
+                            <h5 className="font-[600]">Número de telefone</h5>
                             <h4 className="text-[#000000a6]">{data.phoneNumber}</h4>
                         </div>
                         <div className="p-3">
-                            <h5 className="font-[600]">Total Products</h5>
+                            <h5 className="font-[600]">Total de Produtos</h5>
                             <h4 className="text-[#000000a6]">{products && products.length}</h4>
                         </div>
                         <div className="p-3">
-                            <h5 className="font-[600]">Shop Ratings</h5>
+                            <h5 className="font-[600]">Avaliações da loja</h5>
                             <h4 className="text-[#000000b0]">{averageRating}/5</h4>
                         </div>
                         <div className="p-3">
-                            <h5 className="font-[600]">Joined On</h5>
+                            <h5 className="font-[600]">Entrou em</h5>
                             <h4 className="text-[#000000b0]">{data?.createdAt?.slice(0, 10)}</h4>
                         </div>
                         {isOwner && (
                             <div className="py-3 px-4">
                                 <Link to="/settings">
                                     <div className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}>
-                                        <span className="text-white">Edit Shop</span>
+                                        <span className="text-white">Editar loja</span>
                                     </div>
                                 </Link>
 
                                 <div className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}
                                     onClick={logoutHandler}
                                 >
-                                    <span className="text-white">Log Out</span>
+                                    <span className="text-white">Sair</span>
                                 </div>
                             </div>
                         )}

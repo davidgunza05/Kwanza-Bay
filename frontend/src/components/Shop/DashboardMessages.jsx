@@ -210,7 +210,7 @@ const DashboardMessages = () => {
       {!open && (
         <>
           <h1 className="text-center text-[30px] py-3 font-Poppins">
-            All Messages
+            Todas mensagens
           </h1>
           {/* All messages list */}
           {conversations &&
@@ -311,7 +311,7 @@ const MessageList = ({
         <h1 className="text-[18px]">{user?.name}</h1>
         <p className="text-[16px] text-[#000c]">
           {data?.lastMessageId !== user?._id
-            ? "You:"
+            ? "Você:"
             : (user?.name ? user.name.split(" ")[0] : "") + ": "}
           {data?.lastMessage}
         </p>
@@ -421,7 +421,7 @@ const SellerInbox = ({
           <input
             type="text"
             required
-            placeholder="Enter your message..."
+            placeholder="Digite sua mensagem..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             className={`${styles.input}`}

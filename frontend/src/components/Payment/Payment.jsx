@@ -42,7 +42,7 @@ const Payment = () => {
                         },
                     },
                 ],
-                // not needed if a shipping address is actually needed
+                //não é necessário se um endereço de entrega for realmente necessário
                 application_context: {
                     shipping_preference: "NO_SHIPPING",
                 },
@@ -88,7 +88,7 @@ const Payment = () => {
             .then((res) => {
                 setOpen(false);
                 navigate("/order/success");
-                toast.success("Order successful!");
+                toast.success("Pedido bem-sucedido!");
                 localStorage.setItem("cartItems", JSON.stringify([]));
                 localStorage.setItem("latestOrder", JSON.stringify([]));
                 window.location.reload();
@@ -99,8 +99,6 @@ const Payment = () => {
     const paymentData = {
         amount: Math.round(orderData?.totalPrice * 100),
     }
-
-
 
     const paymentHandler = async (e) => {
         e.preventDefault();
@@ -153,8 +151,7 @@ const Payment = () => {
         }
     };
 
-
-    //  Cash on Delevery Handler (COD)
+    //  Manipulador de pagamento na entrega (COD)
     const cashOnDeliveryHandler = async (e) => {
         e.preventDefault();
 
@@ -173,7 +170,7 @@ const Payment = () => {
             .then((res) => {
                 setOpen(false);
                 navigate("/order/success");
-                toast.success("Order successful!");
+                toast.success("Pedido bem-sucedido!");
                 localStorage.setItem("cartItems", JSON.stringify([]));
                 localStorage.setItem("latestOrder", JSON.stringify([]));
                 window.location.reload();
@@ -233,7 +230,7 @@ const PaymentInfo = ({
                         ) : null}
                     </div>
                     <h4 className="text-[18px] pl-2 font-[600] text-[#000000b1]">
-                        Pay with Debit/credit card
+                        Pague com cartão de débito/crédito
                     </h4>
                 </div>
 
@@ -243,13 +240,13 @@ const PaymentInfo = ({
                         <form className="w-full" onSubmit={paymentHandler}>
                             <div className="w-full flex pb-3">
                                 <div className="w-[50%]">
-                                    <label className="block pb-2">Name on Card</label>
+                                    <label className="block pb-2">Nome no cartão</label>
                                     <input required
                                         value={user && user.name}
                                         className={`${styles.input} !w-[95%]`} />
                                 </div>
                                 <div className="w-[50%]">
-                                    <label className="block pb-2">Exp Date</label>
+                                    <label className="block pb-2">Data de validade</label>
                                     <CardExpiryElement
                                         className={`${styles.input}`}
                                         options={{
@@ -274,7 +271,7 @@ const PaymentInfo = ({
 
                             <div className="w-full flex pb-3">
                                 <div className="w-[50%]">
-                                    <label className="block pb-2">Name On Card</label>
+                                    <label className="block pb-2">Nome no cartão</label>
                                     <CardNumberElement
                                         className={`${styles.input} !h-[35px] !w-[95%]`}
                                         options={{
@@ -341,7 +338,7 @@ const PaymentInfo = ({
                         ) : null}
                     </div>
                     <h4 className="text-[18px] pl-2 font-[600] text-[#000000b1]">
-                        Pay with Paypal
+                    Pague com Paypal
                     </h4>
                 </div>
 
@@ -352,7 +349,7 @@ const PaymentInfo = ({
                             className={`${styles.button} !bg-[#f63b60] text-white h-[45px] rounded-[5px] cursor-pointer text-[18px] font-[600]`}
                             onClick={() => setOpen(true)}
                         >
-                            pay Now
+                            pague agora
                         </div>
                         {
                             open && (
@@ -399,7 +396,7 @@ const PaymentInfo = ({
                         ) : null}
                     </div>
                     <h4 className="text-[18px] pl-2 font-[600] text-[#000000b1]">
-                        Cash on Delivery
+                    Pagamento na entrega
                     </h4>
                 </div>
 
@@ -431,21 +428,21 @@ const CartData = ({ orderData }) => {
         <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
             <div className="flex justify-between">
                 <h3 className="text-[16px] font-[400] text-[#000000a4]">subtotal:</h3>
-                <h5 className="text-[18px] font-[600]">${orderData?.subTotalPrice}</h5>
+                <h5 className="text-[18px] font-[600]">{orderData?.subTotalPrice}KZ</h5>
             </div>
             <br />
             <div className="flex justify-between">
-                <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
-                <h5 className="text-[18px] font-[600]">${shipping}</h5>
+                <h3 className="text-[16px] font-[400] text-[#000000a4]">envio:</h3>
+                <h5 className="text-[18px] font-[600]">{shipping}KZ</h5>
             </div>
             <br />
             <div className="flex justify-between border-b pb-3">
-                <h3 className="text-[16px] font-[400] text-[#000000a4]">Discount:</h3>
-                <h5 className="text-[18px] font-[600]">{orderData?.discountPrice ? "$" + orderData.discountPrice : "-"}
+                <h3 className="text-[16px] font-[400] text-[#000000a4]">Desconto:</h3>
+                <h5 className="text-[18px] font-[600]">{orderData?.discountPrice ? "KZ  " + orderData.discountPrice : "-"}
                 </h5>
             </div>
             <h5 className="text-[18px] font-[600] text-end pt-3">
-                ${orderData?.totalPrice}
+                {orderData?.totalPrice}KZ
             </h5>
             <br />
 
