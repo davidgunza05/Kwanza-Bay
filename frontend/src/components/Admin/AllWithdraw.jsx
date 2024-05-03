@@ -28,42 +28,42 @@ const AllWithdraw = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Withdraw Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Retirar ID", minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Shop Name",
+      headerName: "Nome da loja",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "shopId",
-      headerName: "Shop Id",
+      headerName: "Id loja",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "amount",
-      headerName: "Amount",
+      headerName: "Quantia",
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "status",
-      headerName: "status",
+      headerName: "estado",
       type: "text",
       minWidth: 80,
       flex: 0.5,
     },
     {
       field: "createdAt",
-      headerName: "Request given at",
+      headerName: "Pedido requisitado em",
       type: "number",
       minWidth: 130,
       flex: 0.6,
     },
     {
       field: " ",
-      headerName: "Update Status",
+      headerName: "Atualizar o estado",
       type: "number",
       minWidth: 130,
       flex: 0.6,
@@ -105,7 +105,7 @@ const AllWithdraw = () => {
         id: item._id,
         shopId: item.seller._id,
         name: item.seller.name,
-        amount: "US$ " + item.amount,
+        amount: "KZ " + item.amount,
         status: item.status,
         createdAt: item.createdAt.slice(0, 10),
       });
@@ -128,7 +128,7 @@ const AllWithdraw = () => {
               <RxCross1 size={25} onClick={() => setOpen(false)} />
             </div>
             <h1 className="text-[25px] text-center font-Poppins">
-              Update Withdraw status
+              Atualizar estado de retirada
             </h1>
             <br />
             <select
@@ -145,7 +145,7 @@ const AllWithdraw = () => {
               className={`block ${styles.button} text-white !h-[42px] mt-4 text-[18px]`}
               onClick={handleSubmit}
             >
-              Update
+              Atualizar
             </button>
           </div>
         </div>

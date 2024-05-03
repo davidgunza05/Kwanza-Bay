@@ -18,14 +18,14 @@ const EventCard = ({ active, data }) => {
   const addToCartHandler = (data) => {
     const isItemExists = cart && cart.find((i) => i._id === data._id);
     if (isItemExists) {
-      toast.error("Item alredy in cart!");
+      toast.error("Item já no carrinho!");
     } else {
       if (data.stock < 1) {
-        toast.error("Product stock limited!");
+        toast.error("Estoque de produtos limitado!");
       } else {
         const cartData = { ...data, qty: 1 };
         dispatch(addTocart(cartData));
-        toast.success("item added to cart successfully!");
+        toast.success("item adicionado ao carrinho com sucesso!");
       }
     }
   };
@@ -47,27 +47,27 @@ const EventCard = ({ active, data }) => {
         <div className="flex py-2 justify-between">
           <div className="flex">
             <h5 className="font-[500] text-[18px] text-[#d55b45] pr-3 line-through">
-              {data.originalPrice}$
+              {data.originalPrice} KZ
             </h5>
             <h5 className="font-bold text-[20px] text-[#333] font-Roboto">
-              {data.discountPrice}$
+              {data.discountPrice} KZ
             </h5>
           </div>
           <span className="pr-3 font-[400] text-[17px] text-[#44a55e]">
-            {data.sold_out} sold
+            {data.sold_out} vendido
           </span>
         </div>
         <CountDown data={data} />
         <br />
         <div className="flex items-center">
           <Link to={`/product/${data._id}?isEvent=true`}>
-            <div className={`${styles.button} text-[#fff]`}>See Details</div>
+            <div className={`${styles.button} text-[#fff]`}>Ver Detalhes</div>
           </Link>
           <div
             className={`${styles.button} text-[#fff] ml-5`}
             onClick={() => addToCartHandler(data)}
           >
-            Add to cart
+            Adicionar ao carrinho
           </div>
         </div>
       </div>

@@ -32,11 +32,11 @@ const AllSellers = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "Seller ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: "Id do vendedor", minWidth: 150, flex: 0.7 },
 
     {
       field: "name",
-      headerName: "name",
+      headerName: "Nome",
       minWidth: 130,
       flex: 0.7,
     },
@@ -49,7 +49,7 @@ const AllSellers = () => {
     },
     {
       field: "address",
-      headerName: "Seller Address",
+      headerName: "Endereço do vendedor",
       type: "text",
       minWidth: 130,
       flex: 0.7,
@@ -57,7 +57,7 @@ const AllSellers = () => {
 
     {
       field: "joinedAt",
-      headerName: "joinedAt",
+      headerName: "juntou-se",
       type: "text",
       minWidth: 130,
       flex: 0.8,
@@ -66,7 +66,7 @@ const AllSellers = () => {
       field: "  ",
       flex: 1,
       minWidth: 150,
-      headerName: "Preview Shop",
+      headerName: "Loja de pré-visualização",
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -85,7 +85,7 @@ const AllSellers = () => {
       field: " ",
       flex: 1,
       minWidth: 150,
-      headerName: "Delete Seller",
+      headerName: "Excluir vendedor",
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -115,7 +115,7 @@ const AllSellers = () => {
   return (
     <div className="w-full flex justify-center pt-5">
       <div className="w-[97%]">
-        <h3 className="text-[22px] font-Poppins pb-2">All Users</h3>
+        <h3 className="text-[22px] font-Poppins pb-2">Todos usuários</h3>
         <div className="w-full min-h-[45vh] bg-white rounded">
           <DataGrid
             rows={row}
@@ -132,20 +132,20 @@ const AllSellers = () => {
                 <RxCross1 size={25} onClick={() => setOpen(false)} />
               </div>
               <h3 className="text-[25px] text-center py-5 font-Poppins text-[#000000cb]">
-                Are you sure you wanna delete this user?
+                Tem certeza de que deseja excluir este usuário?
               </h3>
               <div className="w-full flex items-center justify-center">
                 <div
                   className={`${styles.button} text-white text-[18px] !h-[42px] mr-4`}
                   onClick={() => setOpen(false)}
                 >
-                  cancel
+                  cancelar
                 </div>
                 <div
                   className={`${styles.button} text-white text-[18px] !h-[42px] ml-4`}
                   onClick={() => setOpen(false) || handleDelete(userId)}
                 >
-                  confirm
+                  confirmar
                 </div>
               </div>
             </div>

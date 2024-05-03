@@ -347,10 +347,10 @@ const Header = ({ activeHeading }) => {
                     to="/login"
                     className="text-[18px] pr-[10px] text-[#000000b7]"
                   >
-                    Login{" "}
+                    Entrar{" "}
                   </Link>
                   <Link to="/sign-up" className="text-[18px] text-[#000000b7]">
-                    Sign up{" "}
+                    Registrar-se{" "}
                   </Link>
                 </>
               )}

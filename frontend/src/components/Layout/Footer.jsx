@@ -111,7 +111,7 @@ const Footer = () => {
          text-center pt-2 text-gray-400 text-sm pb-8"
             >
                 <span>© 2024 GunzaLab. Todos os direitos reservados.</span>
-                <span>Terms · Privacy Policy</span>
+                <span>Termos · Política de Privacidade</span>
                 <div className="sm:block flex items-center justify-center w-full">
                     <img
                         src="https://hamart-shop.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffooter-payment.a37c49ac.png&w=640&q=75"

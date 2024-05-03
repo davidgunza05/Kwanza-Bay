@@ -45,7 +45,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 1 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Profile
+          Perfil
         </span>
       </div>
 
@@ -59,7 +59,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 2 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Orders
+          Compras
         </span>
       </div>
 
@@ -73,7 +73,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 3 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Refunds
+         Reembolsos
         </span>
       </div>
 
@@ -87,7 +87,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 4 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          inbox
+         Caixa de mensagem
         </span>
       </div>
 
@@ -101,7 +101,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 5 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Track Order
+          Acompanhar Pedido
         </span>
       </div>
 
@@ -116,7 +116,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 6 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Change password
+          Alterar senha
         </span>
       </div>
 
@@ -130,7 +130,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 7 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Address
+         Endereço
         </span>
       </div>
 
@@ -149,7 +149,7 @@ const ProfileSidebar = ({ active, setActive }) => {
                 active === 8 ? "text-[red]" : ""
               } 800px:block hidden`}
             >
-              Admin Dashboard
+              Painel Admin
             </span>
           </div>
         </Link>
@@ -165,7 +165,7 @@ const ProfileSidebar = ({ active, setActive }) => {
             active === 8 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          loguot
+          Sair
         </span>
       </div>
     </div>

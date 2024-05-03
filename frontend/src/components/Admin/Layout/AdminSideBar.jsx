@@ -24,7 +24,7 @@ const AdminSideBar = ({ active }) => {
               active === 1 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Dashboard
+            Painel
           </h5>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const AdminSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
+            Todos os pedidos
           </h5>
         </Link>
       </div>
@@ -56,7 +56,7 @@ const AdminSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Sellers
+            Todos vendedores
           </h5>
         </Link>
       </div>
@@ -72,7 +72,7 @@ const AdminSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Users
+            Todos usuários
           </h5>
         </Link>
       </div>
@@ -85,7 +85,7 @@ const AdminSideBar = ({ active }) => {
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
+            Todos produtos
           </h5>
         </Link>
       </div>
@@ -101,7 +101,7 @@ const AdminSideBar = ({ active }) => {
               active === 6 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Events
+            Todos eventos
           </h5>
         </Link>
       </div>
@@ -117,7 +117,7 @@ const AdminSideBar = ({ active }) => {
               active === 7 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Withdraw Request
+            Solicitação de retirada
           </h5>
         </Link>
       </div>
@@ -133,7 +133,7 @@ const AdminSideBar = ({ active }) => {
               active === 8 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Settings
+            Configurações
           </h5>
         </Link>
       </div>
